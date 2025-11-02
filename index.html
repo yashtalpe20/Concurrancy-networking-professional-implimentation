@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concurrent Web Scraper - Dark Glass Theme</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Gradient -->
+  <div class="gradient-bg"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1 class="header-title">Concurrent Web Scraper</h1>
+      <p class="header-subtitle">Demonstrating Go Goroutines, Channels &amp; Worker Pool Pattern</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Input Panel -->
+    <section class="glass-card input-panel">
+      <h2 class="section-title">URL Input</h2>
+      <div class="input-group">
+        <label for="urls" class="input-label">Enter URLs (one per line)</label>
+        <textarea
+          id="urls"
+          class="url-input"
+          rows="8"
+          placeholder="https://example.com&#10;another-site.com"
+        ></textarea>
+      </div>
+      <div class="validation-indicator" id="validationIndicator">
+        <span class="indicator-dot"></span>
+        <span class="indicator-text">Ready to scrape</span>
+      </div>
+    </section>
+
+    <!-- Worker Control -->
+    <section class="glass-card worker-control">
+      <label for="workerCount" class="input-label">
+        Worker Pool Size
+        <span id="workerCountDisplay" class="work"></span>
+      </label>
+      <input
+        type="range"
+        id="workerCount"
+        class="worker-slider"
+        min="1"
+        max="50"
+        value="5"
+      />
+    </section>
+
+    <!-- Buttons -->
+    <section class="glass-card button-panel">
+      <button class="btn" id="startBtn">Start Scraping</button>
+      <button class="btn btn-secondary" id="stopBtn" disabled>Stop</button>
+      <button class="btn btn-outline" id="clearBtn">Clear</button>
+    </section>
+
+    <!-- Results Panel -->
+    <section class="glass-card results-panel">
+      <h2 class="section-title">Results</h2>
+      <div id="resultsContainer">
+        <!-- Results will appear here -->
+      </div>
+    </section>
+  </main>
+</body>
+</html>
